@@ -19,6 +19,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.navigation.NavController
 import com.example.navegacio.Routes
 
+/**
+ * Definició de la pantalla 1
+ * @param navController
+ * @author RIS
+ * @since 2024-11-20
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Screen1(navController: NavController) {
@@ -29,16 +35,18 @@ fun Screen1(navController: NavController) {
         verticalArrangement = Arrangement.Center,
         modifier = Modifier
             .fillMaxSize()
-            .background(Color.Green)
+            .background(Color.Cyan)
     ) {
 
         TextField(
             value = nom,
+            placeholder = { Text("Nom") }, // Per tal de que es mostrin les instruccions del TextField
             onValueChange = { nom = it }
         )
 
         Button(
-            onClick = { navController.navigate(Routes.Pantalla2.createRoute(nom)) }
+            onClick = { navController.navigate(Routes.Pantalla2.createRoute(nom)) },
+            enabled = if (nom.isNotEmpty()) true else false
         ) {
             Text("Següent pas")
         }
