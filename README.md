@@ -11,7 +11,7 @@ Show an **screen navigation** use case
 ---
 
 # Gradle dependencies
-It is necessary to add the following dependencies in the file [`app/build.gradle.kts`](app/build.gradle.kts):
+It is necessary to add the following dependencies in the file [`app/build.gradle.kts`](app/build.gradle):
 
 ``` bash
 dependencies {
